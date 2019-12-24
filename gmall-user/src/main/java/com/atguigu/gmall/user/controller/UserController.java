@@ -1,6 +1,5 @@
 package com.atguigu.gmall.user.controller;
 
-
 import com.atguigu.gmall.bean.UmsMember;
 import com.atguigu.gmall.bean.UmsMemberReceiveAddress;
 import com.atguigu.gmall.service.UserService;
@@ -18,9 +17,10 @@ public class UserController {
     UserService userService;
 
     @RequestMapping("getReceiveAddressByMemberId")
-    @ResponseBody
     public List<UmsMemberReceiveAddress> getReceiveAddressByMemberId(String memberId){
+
         List<UmsMemberReceiveAddress> umsMemberReceiveAddresses = userService.getReceiveAddressByMemberId(memberId);
+
         return umsMemberReceiveAddresses;
     }
 
@@ -28,7 +28,9 @@ public class UserController {
     @RequestMapping("getAllUser")
     @ResponseBody
     public List<UmsMember> getAllUser(){
+
         List<UmsMember> umsMembers = userService.getAllUser();
+
         return umsMembers;
     }
 
